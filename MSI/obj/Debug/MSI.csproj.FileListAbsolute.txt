@@ -1,6 +1,0 @@
-c:\users\piotr\documents\visual studio 2015\Projects\MSI\MSI\bin\Debug\MSI.exe.config
-c:\users\piotr\documents\visual studio 2015\Projects\MSI\MSI\bin\Debug\MSI.exe
-c:\users\piotr\documents\visual studio 2015\Projects\MSI\MSI\bin\Debug\MSI.pdb
-c:\users\piotr\documents\visual studio 2015\Projects\MSI\MSI\obj\Debug\MSI.csprojResolveAssemblyReference.cache
-c:\users\piotr\documents\visual studio 2015\Projects\MSI\MSI\obj\Debug\MSI.exe
-c:\users\piotr\documents\visual studio 2015\Projects\MSI\MSI\obj\Debug\MSI.pdb
