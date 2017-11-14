@@ -126,7 +126,7 @@ namespace DecisionTreeApp.Tree
                 throw new ArgumentException("Node is not a question");
 
             ApplyAnswerToNode(Node.GetNode(CurrentNode.LeftChild.Value), leftAnswer);
-            ApplyAnswerToNode(Node.GetNode(CurrentNode.RightChild.Value), leftAnswer);
+            ApplyAnswerToNode(Node.GetNode(CurrentNode.RightChild.Value), rightAnswer);
 
             CurrentNode = null;
         }
