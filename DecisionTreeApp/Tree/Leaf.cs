@@ -1,10 +1,6 @@
 ﻿namespace DecisionTreeApp.Tree
 {
-    public class Leaf
+    public class Leaf : Node
     {
-        public string Label { get; set; }
-        public double[] Features { get; set; }
-
-        public double Rank;
     }
 }

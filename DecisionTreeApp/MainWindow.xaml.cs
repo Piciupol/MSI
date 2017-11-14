@@ -12,7 +12,7 @@ namespace DecisionTreeApp
     public partial class MainWindow
     {
         private readonly Tree.DecisionTree _decisionTree;
-        private Set _currentSet;
+        private QuestionNode _currentSet;
 
         public MainWindow()
         {
@@ -21,21 +21,21 @@ namespace DecisionTreeApp
             controlGrid.Visibility = Visibility.Collapsed;           
             resultGrid.Visibility = Visibility.Collapsed;
            
-            var sets = new[]
-            {
-                new  Set(){ Question = "Czy lubisz chleb ?", MapFeatureId = 0},
-                new  Set(){ Question = "Czy masz łupież ?", MapFeatureId = 1},
-                new  Set(){ Question = "Pomidor ?", MapFeatureId = 2}
-            };
-            var leaves = new[]
-            {
-                new  Leaf(){ Label = "Student MiNI", Features = new [] { 0.0, 1.0, 0.5 }},
-                new Leaf{ Label = "Student Ekonomii", Features = new [] { 0.5, 0.5, 0.5 }},
-                new Leaf{ Label = "Student Dziennikarstwa", Features = new [] { 0.3, 0.4, 1.0 }}
-            };
+            //var sets = new[]
+            //{
+            //    new  QuestionNode(){ Question = "Czy lubisz chleb ?", MapFeatureId = 0},
+            //    new  QuestionNode(){ Question = "Czy masz łupież ?", MapFeatureId = 1},
+            //    new  QuestionNode(){ Question = "Pomidor ?", MapFeatureId = 2}
+            //};
+            //var leaves = new[]
+            //{
+            //    new  Leaf(){ Label = "Student MiNI", Features = new [] { 0.0, 1.0, 0.5 }},
+            //    new Leaf{ Label = "Student Ekonomii", Features = new [] { 0.5, 0.5, 0.5 }},
+            //    new Leaf{ Label = "Student Dziennikarstwa", Features = new [] { 0.3, 0.4, 1.0 }}
+            //};
 
 
-            var nodeDictionary = new Dictionary<int, Node>() {{1, new Node() { }}};
+            //var nodeDictionary = new Dictionary<int, AbstractNode>() {{1, new AbstractNode() { }}};
 
             _decisionTree = new Tree.DecisionTree(sets.ToList(), leaves.ToList());
         }
