@@ -11,3 +11,4 @@ C:\Users\Piotr\Documents\Visual Studio 2015\Projects\MSI\DecisionTreeApp\obj\Deb
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.csproj.GenerateResource.Cache
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.exe
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.pdb
+C:\Users\Piotr\documents\visual studio 2015\Projects\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.csprojResolveAssemblyReference.cache

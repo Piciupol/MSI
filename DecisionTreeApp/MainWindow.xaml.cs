@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using DecisionTreeApp.Tree;
@@ -19,7 +20,7 @@ namespace DecisionTreeApp
 
             controlGrid.Visibility = Visibility.Collapsed;           
             resultGrid.Visibility = Visibility.Collapsed;
-
+           
             var sets = new[]
             {
                 new  Set(){ Question = "Czy lubisz chleb ?", MapFeatureId = 0},
@@ -32,6 +33,9 @@ namespace DecisionTreeApp
                 new Leaf{ Label = "Student Ekonomii", Features = new [] { 0.5, 0.5, 0.5 }},
                 new Leaf{ Label = "Student Dziennikarstwa", Features = new [] { 0.3, 0.4, 1.0 }}
             };
+
+
+            var nodeDictionary = new Dictionary<int, Node>() {{1, new Node() { }}};
 
             _decisionTree = new Tree.DecisionTree(sets.ToList(), leaves.ToList());
         }

@@ -1,1 +1,0 @@
-c:\Users\Piotr\documents\visual studio 2015\Projects\MSI\tmp\bin\Debug\tmp.exe.config

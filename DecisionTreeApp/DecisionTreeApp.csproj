@@ -58,6 +58,7 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Node.cs" />
     <Compile Include="Tree\DecisionTree.cs" />
     <Compile Include="Tree\Leaf.cs" />
     <Compile Include="Tree\Set.cs" />
