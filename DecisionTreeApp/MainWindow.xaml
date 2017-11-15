@@ -9,17 +9,36 @@
     <Grid>
         <Button x:Name="startButton" Content="Start" HorizontalAlignment="Left" Margin="123,179,0,0" VerticalAlignment="Top" Width="299" Height="89" Background="Black" FontFamily="Showcard Gothic" Foreground="#FFFCFCFC" FontSize="36" Click="startButton_Click"/>
         <Label x:Name="label" Content="PDJ Decision Tree" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,19,0,0" Width="484" FontFamily="Rockwell Extra Bold" FontSize="42" Height="100"/>
-        <Grid x:Name="controlGrid" HorizontalAlignment="Left" Height="176" Margin="82,119,0,0" VerticalAlignment="Top" Width="392">
+        <Grid x:Name="controlGrid" HorizontalAlignment="Left" Height="205" Margin="64,90,0,0" VerticalAlignment="Top" Width="410">
             <Button x:Name="yesAnswerButton" Content="Yes" HorizontalAlignment="Left" Margin="71,65,0,0" VerticalAlignment="Top" Width="87" Height="32" Background="White" Click="yesAnswerButton_Click" RenderTransformOrigin="4.799,-1.208" FontFamily="Showcard Gothic"/>
             <Button x:Name="noAnswerButton" Content="No" HorizontalAlignment="Left" Margin="221,65,0,0" VerticalAlignment="Top" Width="87" Height="32" Background="White" Click="noAnswerButton_Click" FontFamily="Showcard Gothic"/>
             <Button x:Name="okSliderAnswerButton" Content="Ok" HorizontalAlignment="Left" Margin="275,132,0,0" VerticalAlignment="Top" Width="58" Height="21" Background="White" Click="okSliderAnswerButton_Click" FontFamily="Showcard Gothic"/>
-            <Slider x:Name="answerSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,135,0,0" Width="239" Maximum="1" TickFrequency="0.1" LargeChange="0.1"/>
-            <Label x:Name="questionLabel" Content="Question" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,10,0,0" Width="299" FontFamily="Segoe WP Black" FontSize="16"/>
+            <Slider x:Name="answerSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,135,0,0" Width="239" Maximum="1" TickFrequency="0.1" LargeChange="0.1" ValueChanged="answerSlider_ValueChanged"/>
+            <Label x:Name="questionLabel" Content="Question" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Width="410" FontFamily="Segoe WP Black" FontSize="16"/>
         </Grid>
         <Grid x:Name="resultGrid" HorizontalAlignment="Left" Height="265" Margin="112,100,0,-0.2" VerticalAlignment="Top" Width="413">
-            <TextBlock x:Name="resultTextBlock" TextWrapping="Wrap" HorizontalAlignment="Left"  Text="TextBlock" VerticalAlignment="Top" Margin="10,10,0,0" Height="138" Width="299" FontFamily="Segoe WP Black" FontSize="16"/>
-            <Button x:Name="restartButton" Content="TRY AGAIn" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Width="256" Height="51" Background="Black" FontFamily="Showcard Gothic" Foreground="#FFFCFCFC" FontSize="36" Click="restartButton_Click"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="389*"/>
+                <ColumnDefinition Width="24*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="resultTextBlock" TextWrapping="Wrap" HorizontalAlignment="Left"  Text="TextBlock" Margin="3,6,0,94.8" Width="376" FontFamily="Segoe WP Black" FontSize="16" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="1.323"/>
+                        <RotateTransform Angle="-0.556"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="restartButton" Content="TRY AGAIn" HorizontalAlignment="Right" Margin="0,86,122.8,23.8" Width="256" Background="Black" FontFamily="Showcard Gothic" Foreground="#FFFCFCFC" FontSize="36" Click="restartButton_Click" Grid.Row="2"/>
         </Grid>
+        <Label x:Name="sliderLabel" Content="Wartość" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,201,0,0"/>
 
     </Grid>
 </Window>
