@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
-using System.Windows.Input;
 using DecisionTreeApp.Tree;
 
 namespace DecisionTreeApp
@@ -20,24 +18,20 @@ namespace DecisionTreeApp
 
             controlGrid.Visibility = Visibility.Collapsed;           
             resultGrid.Visibility = Visibility.Collapsed;
-           
-            //var sets = new[]
-            //{
-            //    new  QuestionNode(){ Question = "Czy lubisz chleb ?", MapFeatureId = 0},
-            //    new  QuestionNode(){ Question = "Czy masz łupież ?", MapFeatureId = 1},
-            //    new  QuestionNode(){ Question = "Pomidor ?", MapFeatureId = 2}
-            //};
-            //var leaves = new[]
-            //{
-            //    new  Leaf(){ Label = "Student MiNI", Features = new [] { 0.0, 1.0, 0.5 }},
-            //    new Leaf{ Label = "Student Ekonomii", Features = new [] { 0.5, 0.5, 0.5 }},
-            //    new Leaf{ Label = "Student Dziennikarstwa", Features = new [] { 0.3, 0.4, 1.0 }}
-            //};
+
+            var nodes = new[]
+            {
+                new  QuestionNode(){ Question = "Czy lubisz chleb ?", Id = 0, LeftChild = 1, RightChild = 2 },
+                new  QuestionNode(){ Question = "Czy masz łupież ?", Id = 1, LeftChild = 3, RightChild = 4},
+                new  QuestionNode(){ Question = "Pomidor ?", Id = 2, LeftChild = 5, RightChild = 6},
+                new Node() {Label = "Dziennikarstwo", Id= 3},
+                new Node() {Label = "MiNI", Id= 4},
+                new Node() {Label = "Ekonomia", Id= 5},
+                new Node() {Label = "Turystyka i rekreacja", Id= 6}
+            };
 
 
-            //var nodeDictionary = new Dictionary<int, AbstractNode>() {{1, new AbstractNode() { }}};
-
-            _decisionTree = new Tree.DecisionTree(sets.ToList(), leaves.ToList());
+            _decisionTree = new DecisionTree(nodes);
         }
 
         private void startButton_Click(object sender, RoutedEventArgs e)
@@ -49,39 +43,39 @@ namespace DecisionTreeApp
 
         private void yesAnswerButton_Click(object sender, RoutedEventArgs e)
         {
-            _decisionTree.UpdateLeafRanks(_currentSet, 1.0);
+            _decisionTree.ProvideAnswer(0.0, 1.0);
             UpdateSet();
         }
 
         private void noAnswerButton_Click(object sender, RoutedEventArgs e)
         {
-            _decisionTree.UpdateLeafRanks(_currentSet, 0.0);
+            _decisionTree.ProvideAnswer(1.0, 0.0);
             UpdateSet();
         }
 
         public void UpdateSet()
         {
-            if (_decisionTree.ActiveSetsCount > 0)
+            var questionNode = _decisionTree.GetQuestion();
+            if (questionNode != null  && _decisionTree.Answers.Count() < 3)
             {
-                _currentSet = _decisionTree.TakeBestSetToAsk();
-                questionLabel.Content = _currentSet.Question;
+                questionLabel.Content = questionNode.Question;
                 answerSlider.Value = 0;
+                return;
             }
-            else
-            {
+
                 SetResultMessage();
                 _decisionTree.Reset();
                 resultGrid.Visibility = Visibility.Visible;
                 controlGrid.Visibility = Visibility.Collapsed;
-            }
+            
         }
 
         private void SetResultMessage()
         {
-            var bestLeaves = _decisionTree.GetTopLeaves(5);
-            var message = "TOP 5\n\n";
-            for (int i = 0; i < bestLeaves.Count; i++)
-                message += $"{i+1}. {bestLeaves[i].Label} : {bestLeaves[i].Rank:0.00} \n";
+            var answers = _decisionTree.Answers.OrderByDescending(a => a.Rank).ToList();
+            var message = "TOP 3\n\n";
+            for (int i = 0; i < answers.Count; i++)
+                message += $"{i+1}. {answers[i].Label} : {answers[i].Rank:0.00} \n";
 
             resultTextBlock.Text = message;
         }
@@ -89,7 +83,8 @@ namespace DecisionTreeApp
 
         private void okSliderAnswerButton_Click(object sender, RoutedEventArgs e)
         {
-            _decisionTree.UpdateLeafRanks(_currentSet, answerSlider.Value);
+            var answer = answerSlider.Value;
+            _decisionTree.ProvideAnswer(1.0 - answer, answer);
             UpdateSet();
         }
 

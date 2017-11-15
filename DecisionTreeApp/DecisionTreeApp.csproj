@@ -55,19 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="FuzzyOperations.cs" />
+    <Compile Include="Tree\FuzzyOperations.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Node.cs" />
-    <Compile Include="NodeComparer.cs" />
+    <Compile Include="Tree\Node.cs" />
+    <Compile Include="Tree\NodeComparer.cs" />
     <Compile Include="Tree\DecisionTree.cs" />
-    <Compile Include="Tree\Leaf.cs" />
-    <Compile Include="Tree\Set.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tree\QuestionNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

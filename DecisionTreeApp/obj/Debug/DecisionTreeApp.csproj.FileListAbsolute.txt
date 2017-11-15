@@ -12,3 +12,17 @@ C:\Users\Piotr\Documents\Visual Studio 2015\Projects\MSI\DecisionTreeApp\obj\Deb
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.exe
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.pdb
 C:\Users\Piotr\documents\visual studio 2015\Projects\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.csprojResolveAssemblyReference.cache
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\bin\Debug\DecisionTreeApp.exe.config
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.exe
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.pdb
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.csprojResolveAssemblyReference.cache
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\MainWindow.g.cs
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\App.g.cs
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp_MarkupCompile.cache
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp_MarkupCompile.lref
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\bin\Debug\DecisionTreeApp.exe
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\bin\Debug\DecisionTreeApp.pdb
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\MainWindow.baml
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.g.resources
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.Properties.Resources.resources
+C:\Users\Piotr\repos\MSI\DecisionTreeApp\obj\Debug\DecisionTreeApp.csproj.GenerateResource.Cache
