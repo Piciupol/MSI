@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DecisionTreeApp
+namespace DecisionTreeApp.Tree
 {
-    interface IFuzzyOperations
+    public interface IFuzzyOperations
     {
         double SNorm(double a, double b);
 
