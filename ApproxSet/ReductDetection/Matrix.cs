@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReductDetection
 {
-    class Matrix
+    public class Matrix
     {
         public int Rows { get; private set; }
         public int Columns { get; private set; }
@@ -24,6 +24,9 @@ namespace ReductDetection
         private void FillMatrix(IList<ElementData> elements)
         {
             attributes = new IList<int>[elements.Count(), elements.Count()];
+            for(var i=0; i < attributes.GetLength(0); i++)
+                for(var j=0; j < attributes.GetLength(1); j++)
+                    attributes[i,j] = new List<int>();
 
             Parallel.For(0, elements.Count(), row =>
             {
@@ -42,9 +45,6 @@ namespace ReductDetection
             });
         }
 
-        public IList<int> this[int row, int column]
-        {
-            get { return attributes[row, column]; }
-        }
+        public IList<int> this[int row, int column] => attributes[row, column];
     }
 }

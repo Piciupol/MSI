@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace ReductDetection
 {
-    class ElementData
+    public class ElementData
     {
         public int Id { get; set; }
 
-        public IList<AttributeValue> ConditionValues { get; private set; }
+        public IList<bool> ConditionValues { get; private set; }
 
-        public AttributeValue DecisionValue { get; set; }
+        public string DecisionValue { get; set; }
 
         public ElementData()
         {
-            ConditionValues = new List<AttributeValue>();
+            ConditionValues = new List<bool>();
         }
     }
 }

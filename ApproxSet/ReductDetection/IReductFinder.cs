@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReductDetection
 {
-    interface IReductFinder
+    public interface IReductFinder
     {
         IList<int> GetReducts(Matrix matrix);
     }

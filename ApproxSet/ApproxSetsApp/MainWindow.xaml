@@ -1,0 +1,41 @@
+﻿<Window x:Class="DecisionTreeApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApproximateSetsApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="394.052" Width="560.242">
+    <Grid>
+        <Button x:Name="startButton" Content="Start" HorizontalAlignment="Left" Margin="123,179,0,0" VerticalAlignment="Top" Width="299" Height="89" Background="Black" FontFamily="Showcard Gothic" Foreground="#FFFCFCFC" FontSize="36" Click="startButton_Click"/>
+        <Label x:Name="label" Content="      PDJ Aprx Sets" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,19,0,0" Width="484" FontFamily="Rockwell Extra Bold" FontSize="42" Height="100"/>
+        <Grid x:Name="controlGrid" HorizontalAlignment="Left" Height="205" Margin="64,90,0,0" VerticalAlignment="Top" Width="410">
+            <Button x:Name="yesAnswerButton" Content="Yes" HorizontalAlignment="Left" Margin="71,65,0,0" VerticalAlignment="Top" Width="87" Height="32" Background="White" Click="yesAnswerButton_Click" RenderTransformOrigin="4.799,-1.208" FontFamily="Showcard Gothic"/>
+            <Button x:Name="noAnswerButton" Content="No" HorizontalAlignment="Left" Margin="221,65,0,0" VerticalAlignment="Top" Width="87" Height="32" Background="White" Click="noAnswerButton_Click" FontFamily="Showcard Gothic"/>
+            <Label x:Name="questionLabel" Content="Question" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Width="410" FontFamily="Segoe WP Black" FontSize="16"/>
+        </Grid>
+        <Grid x:Name="resultGrid" HorizontalAlignment="Left" Height="265" Margin="112,100,0,-0.2" VerticalAlignment="Top" Width="413">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="389*"/>
+                <ColumnDefinition Width="24*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="resultTextBlock" TextWrapping="Wrap" HorizontalAlignment="Left"  Text="TextBlock" Margin="3,6,0,94.8" Width="376" FontFamily="Segoe WP Black" FontSize="16" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="1.323"/>
+                        <RotateTransform Angle="-0.556"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button x:Name="restartButton" Content="TRY AGAIn" HorizontalAlignment="Right" Margin="0,86,122.8,23.8" Width="256" Background="Black" FontFamily="Showcard Gothic" Foreground="#FFFCFCFC" FontSize="36" Click="restartButton_Click" Grid.Row="2"/>
+        </Grid>
+
+    </Grid>
+</Window>
