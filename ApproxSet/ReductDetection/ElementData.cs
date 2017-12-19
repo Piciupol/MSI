@@ -10,7 +10,7 @@ namespace ReductDetection
     {
         public int Id { get; set; }
 
-        public IList<bool> ConditionValues { get; private set; }
+        public IList<bool> ConditionValues { get; set; }
 
         public string DecisionValue { get; set; }
 

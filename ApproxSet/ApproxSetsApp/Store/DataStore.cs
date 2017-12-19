@@ -12,14 +12,20 @@ namespace ApproximateSetsApp.Store
 
         public DataStore(string fileName = null)
         {
-            if(fileName == null) return;
-
-            var serializer = new JsonSerializer();
-            using (var file = File.OpenText(fileName))
+            if (fileName == null)
             {
-                var store = (DataStore) serializer.Deserialize(file, typeof(DataStore));
-                Elements = store.Elements;
-                AttributeNames = store.AttributeNames;
+                AttributeNames = new List<string>();
+                Elements = new List<ElementData>();
+            }
+            else
+            {
+                var serializer = new JsonSerializer();
+                using (var file = File.OpenText(fileName))
+                {
+                    var store = (DataStore)serializer.Deserialize(file, typeof(DataStore));
+                    Elements = store.Elements;
+                    AttributeNames = store.AttributeNames;
+                }
             }
         }
 

@@ -16,7 +16,7 @@ namespace ReductDetection
             var attributePositions = new Dictionary<int, IList<Cell>>();
 
             CountAttributeOccurencies(matrix, attributeCounters, attributePositions);
-            int maxOccurency = attributeCounters.Values.Max();
+            int maxOccurency = GetMaxOccurency(attributeCounters);
             while (maxOccurency > 0)
             {
                 int mostImportantAttribute = GetMostImportantAttribute(attributeCounters, maxOccurency);
@@ -28,6 +28,14 @@ namespace ReductDetection
                 maxOccurency = attributeCounters.Values.Max();
             }
             return result;
+        }
+
+        private static int GetMaxOccurency(Dictionary<int, int> attributeCounters)
+        {
+            if (attributeCounters.Any())
+                return attributeCounters.Values.Max();
+            else
+                return 0;
         }
 
         private static void EraseCells(Matrix matrix, IList<Cell> positions)
@@ -48,8 +56,9 @@ namespace ReductDetection
             IDictionary<int, int> attributeCounters,
             IDictionary<int,IList<Cell>> attributePositions)
         {
-            foreach (var key in attributeCounters.Keys)
+            for(int i = 0; i < attributeCounters.Count; ++i)
             {
+                var key = attributeCounters.Keys.ElementAt(i);
                 attributeCounters[key] = 0;
                 attributePositions[key].Clear();
             }
