@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using ReductDetection;
 
 namespace ApproximateSetsApp.Logic
@@ -13,11 +14,7 @@ namespace ApproximateSetsApp.Logic
         private readonly string _dataFileName;
         private readonly IReductFinder _reductFinder;
 
-        private int _currentReduct;
-
-        //todo
-
-        public bool IsFinished => _currentReduct == _reductIndices.Count;
+        public bool IsFinished => _reductIndices.Count == 0;
 
         public DecisionMaker(string dataFileName, IReductFinder reductFinder)
         {
@@ -36,14 +33,15 @@ namespace ApproximateSetsApp.Logic
 
         public string GetAttributeToAsk()
         {
-            return _attributeNames[_reductIndices[_currentReduct]];
+            return _attributeNames[_reductIndices.First()];
         }
 
         public void SetAnswer(bool value)
         {
-            _elements.RemoveAll(x => x.ConditionValues[_reductIndices[_currentReduct]] != value);
+            _elements.RemoveAll(x => x.ConditionValues[_reductIndices.First()] != value);
+            _reductIndices.RemoveAt(0);
 
-            ++_currentReduct;
+            if(_reductIndices.Count > 0)
             ReduceAttributes();
         }
 
@@ -57,12 +55,12 @@ namespace ApproximateSetsApp.Logic
             var matrix = new Matrix(_elements);
             var newReducts = _reductFinder.GetReducts(matrix).ToList();
             newReducts.Sort();
+            
+            //delete all indices lower than last checked
+            if(_reductIndices != null && _reductIndices.Count > 0)
+                newReducts.RemoveAll(x => x < _reductIndices.First());
 
-            if (_reductIndices == null || !_reductIndices.SequenceEqual(newReducts))
-            {
-                _reductIndices = newReducts;
-                _currentReduct = 0;
-            }
+            _reductIndices = newReducts;
         }
 
         private void LoadData()
