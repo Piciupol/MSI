@@ -10,14 +10,14 @@ namespace ApproximateSetsApp.Logic
         private List<string> _attributeNames;
         private List<int> _reductIndices;
 
-        private string _dataFileName;
+        private readonly string _dataFileName;
         private readonly IReductFinder _reductFinder;
 
         private int _currentReduct;
 
         //todo
 
-        public bool IsFinished => _currentReduct == _reductIndices.Count - 1;
+        public bool IsFinished => _currentReduct == _reductIndices.Count;
 
         public DecisionMaker(string dataFileName, IReductFinder reductFinder)
         {
@@ -43,7 +43,7 @@ namespace ApproximateSetsApp.Logic
         {
             _elements.RemoveAll(x => x.ConditionValues[_reductIndices[_currentReduct]] != value);
 
-            _currentReduct = (_currentReduct + 1) % _reductIndices.Count;
+            ++_currentReduct;
             ReduceAttributes();
         }
 
@@ -56,8 +56,9 @@ namespace ApproximateSetsApp.Logic
         {
             var matrix = new Matrix(_elements);
             var newReducts = _reductFinder.GetReducts(matrix).ToList();
+            newReducts.Sort();
 
-            if (_reductIndices == null || _reductIndices.SequenceEqual(newReducts))
+            if (_reductIndices == null || !_reductIndices.SequenceEqual(newReducts))
             {
                 _reductIndices = newReducts;
                 _currentReduct = 0;
@@ -66,7 +67,7 @@ namespace ApproximateSetsApp.Logic
 
         private void LoadData()
         {
-            var store = new Store.DataStore("test.json");
+            var store = new Store.DataStore(_dataFileName);
             _elements = store.Elements;
             _attributeNames = store.AttributeNames;
         }

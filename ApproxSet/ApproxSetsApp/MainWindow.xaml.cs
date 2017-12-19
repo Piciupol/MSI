@@ -19,7 +19,7 @@ namespace DecisionTreeApp
             controlGrid.Visibility = Visibility.Collapsed;
             resultGrid.Visibility = Visibility.Collapsed;
 
-            decisionMaker = new DecisionMaker("test", new JohnsonReductFinder());
+            decisionMaker = new DecisionMaker("test.json", new JohnsonReductFinder());
         }
 
         private void startButton_Click(object sender, RoutedEventArgs e)
@@ -43,10 +43,10 @@ namespace DecisionTreeApp
 
         public void UpdateSet()
         {
-            var attributeName = decisionMaker.GetAttributeToAsk();
 
             if (decisionMaker.IsFinished == false)
             {
+                var attributeName = decisionMaker.GetAttributeToAsk();
                 questionLabel.Content = attributeName;
 
                     yesAnswerButton.Visibility = Visibility.Visible;
