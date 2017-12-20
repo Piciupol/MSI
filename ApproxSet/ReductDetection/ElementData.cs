@@ -13,10 +13,5 @@ namespace ReductDetection
         public IList<bool> ConditionValues { get; set; }
 
         public string DecisionValue { get; set; }
-
-        public ElementData()
-        {
-            ConditionValues = new List<bool>();
-        }
     }
 }

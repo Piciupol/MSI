@@ -16,39 +16,35 @@ namespace DecisionTreeApp
     {
         public App()
         {
-            var store = new DataStore();
+            var store = new DataInput();
             store.AttributeNames.Add("first");
             store.AttributeNames.Add("second");
             store.AttributeNames.Add("third");
 
 
 
-            store.Elements.Add(new ReductDetection.ElementData()
+            store.ElementDataInputs.Add(new ElementDataInput()
             {
-                Id = 0,
-                ConditionValues = new List<bool> { false, false , false},
-                DecisionValue = "Result1"
+                Conditions = new List<int>{ },
+                Decision = "Result1"
             });
 
-            store.Elements.Add(new ReductDetection.ElementData()
+            store.ElementDataInputs.Add(new ElementDataInput()
             {
-                Id = 1,
-                ConditionValues = new List<bool> { false, true, false },
-                DecisionValue = "Result2"
+                Conditions = new List<int> { 1 },
+                Decision = "Result2"
             });
 
-            store.Elements.Add(new ReductDetection.ElementData()
+            store.ElementDataInputs.Add(new ElementDataInput()
             {
-                Id = 2,
-                ConditionValues = new List<bool> { true, false, false },
-                DecisionValue = "Result3"
+                Conditions = new List<int> { 0 },
+                Decision = "Result3"
             });
 
-            store.Elements.Add(new ReductDetection.ElementData()
+            store.ElementDataInputs.Add(new ElementDataInput()
             {
-                Id = 3,
-                ConditionValues = new List<bool> { true, false, true },
-                DecisionValue = "Result4"
+                Conditions = new List<int> { 0, 2},
+                Decision = "Result4"
             });
 
 

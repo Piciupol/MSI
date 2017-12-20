@@ -55,10 +55,6 @@ namespace ApproximateSetsApp.Logic
             var matrix = new Matrix(_elements);
             var newReducts = _reductFinder.GetReducts(matrix).ToList();
             newReducts.Sort();
-            
-            //delete all indices lower than last checked
-            if(_reductIndices != null && _reductIndices.Count > 0)
-                newReducts.RemoveAll(x => x < _reductIndices.First());
 
             _reductIndices = newReducts;
         }

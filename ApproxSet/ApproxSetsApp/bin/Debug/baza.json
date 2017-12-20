@@ -1,0 +1,86 @@
+{
+"AttributeNames":[
+
+"Umysł ścisły", 					//0
+"Ekonomia", 						//1
+"Teoria nad praktykę",				//2
+"Języki obce",						//3
+"Zarządzanie ludźmi", 				//4 
+"Budowa maszyn", 					//5
+"Przyroda", 						//6
+"Jednostka ponad społeczeństwo", 	//7
+"Europa", 							//8
+"Polityka", 						//9
+"Zarządzanie", 						//10
+"Elektonika", 						//11
+"Budowa pojazdów", 					//12
+"Powstanie wszechświata", 			//13 
+"Człowiek najważniejszy", 			//14
+"Inne kultury", 					//15
+"Uczucia i myśli innych osób", 		//16
+"Kiltura śródziemnomorska", 		//17
+"Nowe technologie", 				//18
+"Projektowanie budynków",	   		 //19
+"Napęd elektryczny", 				//20
+"Teoria algorytmów i obliczeń", 	//21
+"Nitrogliceryna", 					//22
+"Historia", 						//23
+"Papierologia", 					//24
+"Medycyna", 						//25
+"Oszczędzanie energii", 			//26
+"Polityka jest ciekawa" 			//27
+
+],
+
+"ElementDataInputs":[
+
+{"Conditions":[],"Decision":"Socjologia"},
+{"Conditions":[27],"Decision":"Politologia"},
+{"Conditions":[23],"Decision":"Historia"},
+{"Conditions":[15],"Decision":"Kulturoznawstwo"},
+
+{"Conditions":[7],"Decision":"Pedagogika"},
+{"Conditions":[7,20],"Decision":"Psychologia"},
+
+{"Conditions":[3],"Decision":"Sinologia"},
+{"Conditions":[3,8],"Decision":"Anglistyka"},
+{"Conditions":[3,8,17],"Decision":"Romanistyka"},
+
+{"Conditions":[1,4],"Decision":"Zarządzanie"},
+{"Conditions":[1,9],"Decision":"Stosunki międzynarodowe"},
+{"Conditions":[1,9,18],"Decision":"Informatyka i ekonometria"},
+{"Conditions":[1,9,18,24],"Decision":"Finanse i rachunkowość"},
+{"Conditions":[1],"Decision":"Ekonomia"},
+
+{"Conditions":[0],"Decision":"Energetyka"},
+{"Conditions":[0,25],"Decision":"Inżynieria biomedyczna"},
+{"Conditions":[0,19],"Decision":"Budownictwo"},
+{"Conditions":[0,19,26],"Decision":"Inżynieria środowiska"},
+{"Conditions":[0,11],"Decision":"Elektonika"},
+
+{"Conditions":[0,5],"Decision":"Mechanika i budowa maszyn"},
+{"Conditions":[0,5,12],"Decision":"Lotnictwo i kosmonautyka"},
+{"Conditions":[0,5,12,20],"Decision":"Inżynieria pojazdów elektrycznych i hybrydowych"},
+
+
+{"Conditions":[0,2],"Decision":"Matematyka"},
+{"Conditions":[0,2,21],"Decision":"Informatyka"},
+{"Conditions":[0,2,13],"Decision":"Fizyka"},
+{"Conditions":[0,2,13,22],"Decision":"Chemia"},
+{"Conditions":[0,2,6],"Decision":"Medycyna"},
+{"Conditions":[0,2,6,14],"Decision":"Biologia"},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]}
